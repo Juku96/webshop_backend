@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "Product",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Gender": {
+      "type": "enumeration",
+      "enum": [
+        "Herren",
+        "Damen",
+        "Unisex"
+      ]
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "category": {
+      "model": "category",
+      "via": "products"
+    },
+    "Quantity_S": {
+      "type": "integer"
+    },
+    "Quantity_M": {
+      "type": "integer"
+    },
+    "Quantity_L": {
+      "type": "integer"
+    },
+    "Quantity_XL": {
+      "type": "integer"
+    }
+  }
+}
